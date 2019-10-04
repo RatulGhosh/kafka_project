@@ -54,8 +54,8 @@ table = app.Table(
 #
 
 @app.agent(topic)
-async def process(stream):
-    async for event in stream:
+def process(stream):
+    for event in stream:
         line = None
         if event.red is True:
             line = "red"
